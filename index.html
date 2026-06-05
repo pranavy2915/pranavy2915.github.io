@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranav Yadav | SAP Integration Consultant Portfolio</title>
+    <style>
+        :root {
+            --bg-primary: #0a192f;      /* Navy Blue Dark Mode Background */
+            --bg-secondary: #112240;    /* Distinct Content Cards */
+            --text-primary: #ccd6f6;    /* Crisp Soft-White Text */
+            --text-secondary: #8892b0;  /* Muted Subtitles */
+            --accent: #64ffda;          /* High-Tech Terminal Teal */
+            --font-sans: 'Arial', -apple-system, system-ui, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-primary); color: var(--text-primary); font-family: var(--font-sans); line-height: 1.6; }
+        header { max-width: 1000px; margin: 0 auto; padding: 80px 20px; min-height: 70vh; display: flex; flex-direction: column; justify-content: center; }
+        .subtitle { color: var(--accent); font-weight: bold; margin-bottom: 10px; letter-spacing: 1px; }
+        h1 { font-size: 3.5rem; color: #fff; line-height: 1.1; margin-bottom: 20px; }
+        .hero-desc { max-width: 600px; color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 30px; }
+        .cta-btn { display: inline-block; border: 1px solid var(--accent); color: var(--accent); padding: 12px 24px; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: all 0.3s ease; width: fit-content; }
+        .cta-btn:hover { background-color: rgba(100, 255, 218, 0.1); }
+        
+        main { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        section { padding: 60px 0; }
+        h2 { font-size: 1.8rem; color: #fff; margin-bottom: 30px; display: flex; align-items: center; }
+        h2::after { content: ""; display: block; width: 200px; height: 1px; margin-left: 20px; background-color: var(--bg-secondary); }
+        
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .skill-card { background-color: var(--bg-secondary); padding: 25px; border-radius: 6px; border-bottom: 3px solid transparent; transition: all 0.3s ease; }
+        .skill-card:hover { transform: translateY(-5px); border-bottom-color: var(--accent); }
+        .skill-card h3 { color: #fff; margin-bottom: 15px; }
+        .skill-card p { color: var(--text-secondary); font-size: 0.9rem; }
+
+        .projects-list { display: flex; flex-direction: column; gap: 40px; }
+        .project-card { background-color: var(--bg-secondary); padding: 30px; border-radius: 6px; }
+        .proj-meta { color: var(--accent); font-size: 0.85rem; font-weight: bold; text-transform: uppercase; margin-bottom: 5px; }
+        .project-card h3 { color: #fff; font-size: 1.4rem; margin-bottom: 15px; }
+        .proj-block { margin-bottom: 15px; }
+        .proj-block-title { font-weight: bold; color: var(--text-primary); font-size: 0.95rem; }
+        .proj-block p { color: var(--text-secondary); font-size: 0.9rem; }
+        
+        footer { text-align: center; padding: 60px 20px; border-top: 1px solid var(--bg-secondary); max-width: 1000px; margin: 0 auto; }
+        footer p { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 15px; }
+        .links a { color: var(--accent); text-decoration: none; margin: 0 15px; font-weight: bold; }
+        .links a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="subtitle">Hi, my name is</div>
+        <h1>Pranav Yadav.</h1>
+        <p class="hero-desc">
+            I am an SAP Certified Integration Developer specializing in designing, testing, and deploying enterprise-grade middleware architectures. I specialize in orchestrating real-time secure pipelines connecting core business logic with global supply networks.
+        </p>
+        <a href="mailto:pranavyadav.official@gmail.com" class="cta-btn">Get In Touch</a>
+    </header>
+
+    <main>
+        <section id="skills">
+            <h2>Technical Ecosystem</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>SAP Cloud Integration (CPI)</h3>
+                    <p>Trading Partner Management (TPM), API Management, iFlow Design, Externalization & Parameterization, XSLT, XPath, and Palette processing flows.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>SAP On-Premise (PI/PO)</h3>
+                    <p>Core Data Types, Message Types, Mapping configurations, Operation Architectures, and Integration Adapters (SFTP, JDBC, IDoc, SOAP, REST, XI).</p>
+                </div>
+                <div class="skill-card">
+                    <h3>B2B & Protocols</h3>
+                    <p>ANSI X12, EDIFACT standards, AS2, SFTP, OData, OAuth 2.0, PGP Payload Encryption, and X.509 Certificate deployments.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Monitoring & Runtime</h3>
+                    <p>Deep operational diagnostic capability across PI, CPI, and SAP Proxy runtime tracking frameworks (SPROXY, SXMB_MONI, WE02, WE19, WE20).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Case Studies & Architecture</h2>
+            <div class="projects-list">
+                <div class="project-card">
+                    <div class="proj-meta">B2B Integration Architecture</div>
+                    <h3>Global Supply Chain Automation Framework</h3>
+                    <div class="proj-block"><div class="proj-block-title">The Challenge:</div><p>Streamlining secure, structured transactions for multi-billion dollar commercial environments without scaling engineering overhead manually for each connection endpoint.</p></div>
+                    <div class="proj-block"><div class="proj-block-title">The Architecture:</div><p>Implemented an automated message mapping structure inside SAP Trading Partner Management (TPM). Used AS2 and SFTP certificates to orchestrate raw IDoc configurations, enabling continuous data exchanges with networks like IBM Sterling and Innovate for clients like Walmart, Amazon, Costco, and Kraft Heinz.</p></div>
+                </div>
+                <div class="project-card">
+                    <div class="proj-meta">Cloud Migration Framework</div>
+                    <h3>PI to CPI Architecture Shift (RISE Initiative)</h3>
+                    <div class="proj-block"><div class="proj-block-title">The Challenge:</div><p>Modernizing data processing loops from heavily manual, legacy on-premise hardware layers over to agile, resilient cloud infrastructures.</p></div>
+                    <div class="proj-block"><div class="proj-block-title">The Architecture:</div><p>Deconstructed legacy parameters on over 70 complex functional integrations. Re-parameterized maps into cloud-native AWS deployments, handling edge routing and 403 HTTP security access challenges smoothly.</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>SAP Certified - Integration Developer (Valid through May 2027)</p>
+        <div class="links">
+            <a href="mailto:pranavyadav.official@gmail.com">Email</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
+        </div>
+    </footer>
+
+</body>
+</html>
