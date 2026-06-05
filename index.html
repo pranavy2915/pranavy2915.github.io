@@ -6,103 +6,284 @@
     <title>Pranav Yadav | SAP Integration Consultant Portfolio</title>
     <style>
         :root {
-            --bg-primary: #0a192f;      /* Navy Blue Dark Mode Background */
-            --bg-secondary: #112240;    /* Distinct Content Cards */
-            --text-primary: #ccd6f6;    /* Crisp Soft-White Text */
-            --text-secondary: #8892b0;  /* Muted Subtitles */
-            --accent: #64ffda;          /* High-Tech Terminal Teal */
-            --font-sans: 'Arial', -apple-system, system-ui, sans-serif;
+            --bg-main: #f8fafc;         /* Clean, soft off-white background */
+            --bg-card: #ffffff;         /* Crisp pure white for cards */
+            --text-main: #0f172a;       /* Deep slate/navy for primary text */
+            --text-muted: #475569;      /* Refined gray for body copy */
+            --accent: #2563eb;          /* Enterprise royal blue accent */
+            --accent-light: #eff6ff;    /* Soft blue tint for highlights */
+            --border: #e2e8f0;          /* Subtle structural dividers */
+            --font-sans: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background-color: var(--bg-primary); color: var(--text-primary); font-family: var(--font-sans); line-height: 1.6; }
-        header { max-width: 1000px; margin: 0 auto; padding: 80px 20px; min-height: 70vh; display: flex; flex-direction: column; justify-content: center; }
-        .subtitle { color: var(--accent); font-weight: bold; margin-bottom: 10px; letter-spacing: 1px; }
-        h1 { font-size: 3.5rem; color: #fff; line-height: 1.1; margin-bottom: 20px; }
-        .hero-desc { max-width: 600px; color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 30px; }
-        .cta-btn { display: inline-block; border: 1px solid var(--accent); color: var(--accent); padding: 12px 24px; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: all 0.3s ease; width: fit-content; }
-        .cta-btn:hover { background-color: rgba(100, 255, 218, 0.1); }
-        
-        main { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-        section { padding: 60px 0; }
-        h2 { font-size: 1.8rem; color: #fff; margin-bottom: 30px; display: flex; align-items: center; }
-        h2::after { content: ""; display: block; width: 200px; height: 1px; margin-left: 20px; background-color: var(--bg-secondary); }
-        
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .skill-card { background-color: var(--bg-secondary); padding: 25px; border-radius: 6px; border-bottom: 3px solid transparent; transition: all 0.3s ease; }
-        .skill-card:hover { transform: translateY(-5px); border-bottom-color: var(--accent); }
-        .skill-card h3 { color: #fff; margin-bottom: 15px; }
-        .skill-card p { color: var(--text-secondary); font-size: 0.9rem; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        .projects-list { display: flex; flex-direction: column; gap: 40px; }
-        .project-card { background-color: var(--bg-secondary); padding: 30px; border-radius: 6px; }
-        .proj-meta { color: var(--accent); font-size: 0.85rem; font-weight: bold; text-transform: uppercase; margin-bottom: 5px; }
-        .project-card h3 { color: #fff; font-size: 1.4rem; margin-bottom: 15px; }
-        .proj-block { margin-bottom: 15px; }
-        .proj-block-title { font-weight: bold; color: var(--text-primary); font-size: 0.95rem; }
-        .proj-block p { color: var(--text-secondary); font-size: 0.9rem; }
-        
-        footer { text-align: center; padding: 60px 20px; border-top: 1px solid var(--bg-secondary); max-width: 1000px; margin: 0 auto; }
-        footer p { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 15px; }
-        .links a { color: var(--accent); text-decoration: none; margin: 0 15px; font-weight: bold; }
-        .links a:hover { text-decoration: underline; }
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 100px 24px 60px;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .badge {
+            background-color: var(--accent-light);
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 20px;
+            width: fit-content;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-desc {
+            max-width: 650px;
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            margin-bottom: 35px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--text-main);
+            color: #ffffff;
+            padding: 14px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            width: fit-content;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 24px 80px;
+        }
+
+        section {
+            padding: 40px 0;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .skills-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.2rem; }
+        }
+
+        .skill-card {
+            background-color: var(--bg-card);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .skill-card h3 {
+            color: var(--text-main);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .skill-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--bg-card);
+            padding: 35px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .proj-meta {
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .project-card h3 {
+            color: var(--text-main);
+            font-size: 1.35rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .proj-block {
+            margin-bottom: 15px;
+        }
+
+        .proj-block-title {
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .proj-block p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 24px;
+            background-color: #ffffff;
+            border-top: 1px solid var(--border);
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .links a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="subtitle">Hi, my name is</div>
-        <h1>Pranav Yadav.</h1>
+        <div class="badge">SAP Certified Integration Developer</div>
+        <h1>Pranav Yadav</h1>
         <p class="hero-desc">
-            I am an SAP Certified Integration Developer specializing in designing, testing, and deploying enterprise-grade middleware architectures. I specialize in orchestrating real-time secure pipelines connecting core business logic with global supply networks.
+            I build secure, robust, and highly scalable middleware architectures. Specializing in SAP Integration Suite (CPI) and PI/PO, I bridge the gap between core enterprise operations and global supply networks.
         </p>
-        <a href="mailto:pranavyadav.official@gmail.com" class="cta-btn">Get In Touch</a>
+        <a href="mailto:pranavyadav.official@gmail.com" class="cta-btn">Connect Electronically</a>
     </header>
 
     <main>
         <section id="skills">
-            <h2>Technical Ecosystem</h2>
+            <h2>Core Competencies</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>SAP Cloud Integration (CPI)</h3>
-                    <p>Trading Partner Management (TPM), API Management, iFlow Design, Externalization & Parameterization, XSLT, XPath, and Palette processing flows.</p>
+                    <h3>Cloud-Native Orchestration (CPI)</h3>
+                    <p>End-to-end iFlow engineering, API Governance layer design, B2B Trading Partner Management (TPM), externalization configurations, and Groovy automation styling.</p>
                 </div>
                 <div class="skill-card">
-                    <h3>SAP On-Premise (PI/PO)</h3>
-                    <p>Core Data Types, Message Types, Mapping configurations, Operation Architectures, and Integration Adapters (SFTP, JDBC, IDoc, SOAP, REST, XI).</p>
+                    <h3>On-Premise Architectures (PI/PO)</h3>
+                    <p>Enterprise Service Repository (ESR) data setups, Message Types, custom operation rules, and multi-protocol adapter provisioning (SFTP, Mail, JDBC, RFC, IDoc).</p>
                 </div>
                 <div class="skill-card">
-                    <h3>B2B & Protocols</h3>
-                    <p>ANSI X12, EDIFACT standards, AS2, SFTP, OData, OAuth 2.0, PGP Payload Encryption, and X.509 Certificate deployments.</p>
+                    <h3>Enterprise Security Protocols</h3>
+                    <p>Configuring secure runtime handshakes, SSH Public Key keystore provisioning, PGP encryption policies, OAuth 2.0 authorization, and AS2/X.509 certificate control.</p>
                 </div>
                 <div class="skill-card">
-                    <h3>Monitoring & Runtime</h3>
-                    <p>Deep operational diagnostic capability across PI, CPI, and SAP Proxy runtime tracking frameworks (SPROXY, SXMB_MONI, WE02, WE19, WE20).</p>
+                    <h3>Diagnostics & Monitoring</h3>
+                    <p>Proactive payload tracing and message diagnostics across core functional T-Codes (SPROXY, SXMB_MONI, SMQ2, WE02, WE19, WE20) ensuring zero business downtime.</p>
                 </div>
             </div>
         </section>
 
         <section id="projects">
-            <h2>Case Studies & Architecture</h2>
+            <h2>Architectural Case Studies</h2>
             <div class="projects-list">
+                
                 <div class="project-card">
-                    <div class="proj-meta">B2B Integration Architecture</div>
-                    <h3>Global Supply Chain Automation Framework</h3>
-                    <div class="proj-block"><div class="proj-block-title">The Challenge:</div><p>Streamlining secure, structured transactions for multi-billion dollar commercial environments without scaling engineering overhead manually for each connection endpoint.</p></div>
-                    <div class="proj-block"><div class="proj-block-title">The Architecture:</div><p>Implemented an automated message mapping structure inside SAP Trading Partner Management (TPM). Used AS2 and SFTP certificates to orchestrate raw IDoc configurations, enabling continuous data exchanges with networks like IBM Sterling and Innovate for clients like Walmart, Amazon, Costco, and Kraft Heinz.</p></div>
+                    <div class="proj-meta">Supply Chain Architecture</div>
+                    <h3>Global B2B Trading Partner Automation</h3>
+                    <div class="proj-block">
+                        <div class="proj-block-title">Context & Challenge</div>
+                        <p>Handling and provisioning raw IDoc payloads seamlessly to highly secure VAN endpoints for top-tier retail entities including Walmart, Amazon, and Costco without risking operational latency.</p>
+                    </div>
+                    <div class="proj-block">
+                        <div class="proj-block-title">Implementation Matrix</div>
+                        <p>Leveraged the SAP TPM infrastructure alongside functional AS2 transport layers. Fully managed cryptographic signing certificates to smoothly route structural payloads via RFC to external networks.</p>
+                    </div>
                 </div>
+
                 <div class="project-card">
-                    <div class="proj-meta">Cloud Migration Framework</div>
-                    <h3>PI to CPI Architecture Shift (RISE Initiative)</h3>
-                    <div class="proj-block"><div class="proj-block-title">The Challenge:</div><p>Modernizing data processing loops from heavily manual, legacy on-premise hardware layers over to agile, resilient cloud infrastructures.</p></div>
-                    <div class="proj-block"><div class="proj-block-title">The Architecture:</div><p>Deconstructed legacy parameters on over 70 complex functional integrations. Re-parameterized maps into cloud-native AWS deployments, handling edge routing and 403 HTTP security access challenges smoothly.</p></div>
+                    <div class="proj-meta">Cloud Infrastructure Shift</div>
+                    <h3>Enterprise PI to AWS Cloud Migration</h3>
+                    <div class="proj-block">
+                        <div class="proj-block-title">Context & Challenge</div>
+                        <p>Transitioning business logic from heavily manual on-premise hardware layers over to agile, resilient cloud infrastructures during the OFI RISE initiative.</p>
+                    </div>
+                    <div class="proj-block">
+                        <div class="proj-block-title">Implementation Matrix</div>
+                        <p>Deconstructed legacy parameters on over 70 complex functional integrations. Re-parameterized mappings into secure AWS environments, troubleshooting edge SSL configurations and 403 HTTP runtime blocks directly.</p>
+                    </div>
                 </div>
+
             </div>
         </section>
     </main>
 
     <footer>
-        <p>SAP Certified - Integration Developer (Valid through May 2027)</p>
+        <p>Certifications active through May 2027. Open to global enterprise integration briefs.</p>
         <div class="links">
             <a href="mailto:pranavyadav.official@gmail.com">Email</a>
             <a href="#">LinkedIn</a>
