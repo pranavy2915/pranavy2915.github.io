@@ -3,222 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pranav Yadav | Middleware Architect & SAP Integration Engineer</title>
+    <title>Pranav Yadav | SAP Integration Suite Consultant Portfolio</title>
     <style>
         :root {
-            --bg-main: #f8fafc;
-            --bg-card: #ffffff;
-            --text-main: #0f172a;
-            --text-muted: #475569;
-            --accent: #2563eb;
-            --accent-light: #eff6ff;
-            --border: #e2e8f0;
-            --terminal-bg: #1e293b;
-            --font-sans: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --sap-shell-bg: #1c2d3d;       /* SAP Fiori Launchpad Shell Bar Deep Navy */
+            --sap-brand-color: #0a6ed1;   /* SAP Horizon Accent Blue */
+            --sap-bg-main: #f3f4f5;       /* Fiori Application Canvas Light Gray */
+            --sap-card-bg: #ffffff;       /* Pure White Container Cards */
+            --sap-text-main: #222222;     /* High Contrast Primary Text */
+            --sap-text-muted: #556b82;    /* Slate Blue Muted Text */
+            --sap-border: #d9d9d9;        /* Grid/Table Boundary Gray */
+            --sap-success: #107e3e;       /* SAP Positive Status Green */
+            --sap-font: '72', '72-Web', Arial, Helvetica, sans-serif; /* Native SAP Web Font Stack */
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background-color: var(--bg-main); color: var(--text-main); font-family: var(--font-sans); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-        
-        /* Layout Wrappers */
-        .container { max-width: 1050px; margin: 0 auto; padding: 0 24px; }
-        
-        /* Hero Section */
-        header { padding: 120px 0 80px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
-        @media (max-width: 850px) { header { grid-template-columns: 1fr; padding: 60px 0 40px; } .hero-terminal { display: none; } }
-        
-        .badge { background-color: var(--accent-light); color: var(--accent); font-size: 0.75rem; font-weight: 700; padding: 6px 14px; border-radius: 20px; width: fit-content; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 24px; }
-        h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -1px; line-height: 1.1; margin-bottom: 20px; }
-        .hero-desc { color: var(--text-muted); font-size: 1.2rem; margin-bottom: 35px; max-width: 600px; }
-        
-        /* Interactive Terminal component */
-        .hero-terminal { background-color: var(--terminal-bg); border-radius: 8px; padding: 20px; font-family: 'Courier New', Courier, monospace; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); border: 1px solid #334155; }
-        .terminal-header { display: flex; gap: 6px; margin-bottom: 15px; }
-        .dot { width: 12px; height: 12px; border-radius: 50%; }
-        .dot-r { background-color: #ef4444; } .dot-y { background-color: #f59e0b; } .dot-g { background-color: #10b981; }
-        .terminal-row { color: #38bdf8; font-size: 0.85rem; margin-bottom: 6px; }
-        .terminal-val { color: #e2e8f0; }
-        .copy-trigger { background: transparent; border: 1px solid #475569; color: #94a3b8; font-size: 0.75rem; padding: 4px 8px; border-radius: 4px; cursor: pointer; margin-top: 10px; transition: all 0.2s; }
-        .copy-trigger:hover { border-color: var(--accent); color: #fff; }
+        body { background-color: var(--sap-bg-main); color: var(--sap-text-main); font-family: var(--sap-font); -webkit-font-smoothing: antialiased; }
 
-        /* Interactive Skill Tabs */
-        .tab-container { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 30px; margin-bottom: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-        .tab-menu { display: flex; gap: 10px; border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-bottom: 25px; overflow-x: auto; }
-        .tab-btn { background: none; border: none; padding: 10px 18px; font-size: 0.9rem; font-weight: 600; color: var(--text-muted); cursor: pointer; border-radius: 6px; transition: all 0.2s; white-space: nowrap; }
-        .tab-btn.active { background-color: var(--accent-light); color: var(--accent); }
-        .tab-panel { display: none; }
-        .tab-panel.active { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; animation: fadeIn 0.4s ease; }
-        .tech-pill { background: var(--bg-main); border: 1px solid var(--border); padding: 12px 16px; border-radius: 6px; font-size: 0.9rem; font-weight: 500; display: flex; flex-direction: column; }
-        .tech-pill span { font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; }
+        /* SAP Fiori Shell Bar */
+        .sap-shellbar {
+            background-color: var(--sap-shell-bg);
+            color: #ffffff;
+            padding: 0 32px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-        /* Filterable Project Matrix */
-        .filter-menu { display: flex; gap: 10px; margin-bottom: 25px; }
-        .filter-btn { background: #ffffff; border: 1px solid var(--border); padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
-        .filter-btn.active { background: var(--text-main); color: #fff; border-color: var(--text-main); }
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 25px; }
-        @media (max-width: 600px) { .projects-grid { grid-template-columns: 1fr; } }
-        .project-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 30px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: transform 0.2s; }
-        .project-card:hover { transform: translateY(-2px); }
-        .project-tag { font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-        .project-card h3 { font-size: 1.3rem; margin: 10px 0 15px; }
-        .project-metrics { display: flex; gap: 20px; border-top: 1px solid var(--border); padding-top: 15px; margin-top: 15px; }
-        .metric { font-size: 0.8rem; color: var(--text-muted); }
-        .metric strong { color: var(--text-main); display: block; font-size: 0.95rem; }
+        .sap-shellbar-brand { display: flex; align-items: center; gap: 12px; font-size: 1rem; font-weight: bold; }
+        .sap-logo { background-color: #f0ab00; color: #1c2d3d; font-size: 0.7rem; font-weight: 900; padding: 2px 6px; border-radius: 2px; }
+        .sap-shellbar-badge { font-size: 0.8rem; background: rgba(255, 255, 255, 0.15); padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.25); }
 
-        section { padding: 60px 0; }
-        h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 30px; }
+        .sap-object-page { max-width: 1200px; margin: 0 auto; padding: 24px; }
+
+        /* SAP Fiori Object Header */
+        .sap-object-header {
+            background-color: var(--sap-card-bg);
+            border: 1px solid var(--sap-border);
+            border-radius: 4px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .sap-object-header-title { font-size: 1.75rem; font-weight: 300; color: var(--sap-text-main); margin-bottom: 8px; }
+        .sap-object-header-subtitle { color: var(--sap-text-muted); font-size: 1rem; margin-bottom: 16px; }
+
+        /* KPI Rows */
+        .sap-grid-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 24px; }
+        .sap-kpi-tile { background: var(--sap-card-bg); border: 1px solid var(--sap-border); border-radius: 4px; padding: 16px; }
+        .sap-kpi-label { font-size: 0.8rem; color: var(--sap-text-muted); text-transform: uppercase; }
+        .sap-kpi-value { font-size: 1.5rem; font-weight: bold; color: var(--sap-brand-color); margin: 4px 0; }
+        .sap-kpi-status { font-size: 0.85rem; color: var(--sap-success); font-weight: 600; }
+
+        /* Fiori Icon Tab Bar */
+        .sap-icontabbar { background-color: var(--sap-card-bg); border: 1px solid var(--sap-border); border-radius: 4px; margin-bottom: 24px; }
+        .sap-tab-header { display: flex; border-bottom: 1px solid var(--sap-border); background-color: #fafafa; overflow-x: auto; }
+        .sap-tab-item { background: none; border: none; border-bottom: 4px solid transparent; padding: 14px 24px; font-size: 0.95rem; font-weight: 600; color: var(--sap-text-muted); cursor: pointer; white-space: nowrap; }
+        .sap-tab-item:hover { color: var(--sap-brand-color); background-color: #f0f4f8; }
+        .sap-tab-item.sap-selected { color: var(--sap-brand-color); border-bottom-color: var(--sap-brand-color); background-color: #ffffff; }
+        .sap-tab-content { padding: 24px; }
+        .sap-pane { display: none; }
+        .sap-pane.sap-active { display: block; }
+
+        /* Fiori Unified Data Tables */
+        .sap-table-container { overflow-x: auto; }
+        table.sap-ui-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; }
+        table.sap-ui-table th { background-color: #f2f5f7; color: var(--sap-text-main); font-weight: 600; padding: 12px 16px; border-bottom: 2px solid var(--sap-border); }
+        table.sap-ui-table td { padding: 12px 16px; border-bottom: 1px solid var(--sap-border); color: #333333; }
+        table.sap-ui-table tr:hover td { background-color: #f5f8fa; }
+
+        .sap-panel { background-color: var(--sap-card-bg); border: 1px solid var(--sap-border); border-radius: 4px; padding: 24px; }
+        .sap-panel-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 20px; }
         
-        footer { text-align: center; padding: 60px 0; background: #ffffff; border-top: 1px solid var(--border); margin-top: 80px; }
-        .footer-links a { color: var(--text-main); text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 0.9rem; }
-        .footer-links a:hover { color: var(--accent); }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+        .sap-token { display: inline-block; background-color: #eff6ff; color: var(--sap-brand-color); font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px solid #bfdbfe; margin-right: 4px; margin-bottom: 4px; }
+        .sap-btn-primary { background-color: var(--sap-brand-color); color: white; border: none; padding: 10px 20px; border-radius: 4px; font-weight: 600; font-size: 0.85rem; cursor: pointer; text-decoration: none; }
+        
+        .sap-footer { text-align: center; padding: 32px; color: var(--sap-text-muted); font-size: 0.85rem; border-top: 1px solid var(--sap-border); background: var(--sap-card-bg); margin-top: 40px; }
+        .sap-footer a { color: var(--sap-brand-color); text-decoration: none; font-weight: 600; margin: 0 12px; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <div>
-                <div class="badge">SAP Integration Suite Certified</div>
-                <h1>Pranav Yadav</h1>
-                <p class="hero-desc">
-                    Enterprise Middleware Architect specializing in secure system integration, real-time message mappings, and orchestration patterns across on-premise and hybrid cloud ecosystems.
-                </p>
-                <a href="#projects" class="filter-btn active" style="display:inline-block; text-decoration:none;">Review Case Studies</a>
-            </div>
-            <div class="hero-terminal">
-                <div class="terminal-header">
-                    <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
-                </div>
-                <div class="terminal-row">&gt; Pranav.currentRole: <span class="terminal-val">"Integration Consultant"</span></div>
-                <div class="terminal-row">&gt; Pranav.coreFocus: <span class="terminal-val">["CPI", "BTP", "PI/PO"]</span></div>
-                <div class="terminal-row">&gt; Pranav.status: <span class="terminal-val">"Available for Briefings"</span></div>
-                <button class="copy-trigger" onclick="copyContact()">Copy Contact Metadata</button>
-            </div>
-        </header>
-
-        <main>
-            <!-- INTERACTIVE MATRIX TECH SECTION -->
-            <section id="ecosystem">
-                <h2>Technical Infrastructure Matrix</h2>
-                <div class="tab-container">
-                    <div class="tab-menu">
-                        <button class="tab-btn active" onclick="switchTab(event, 'cloud')">Cloud Platform (BTP/CPI)</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'onprem')">On-Premise Core (PI/PO)</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'security')">Security Protocols</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'protocols')">Data Formats & Adapters</button>
-                    </div>
-
-                    <div id="cloud" class="tab-panel active">
-                        <div class="tech-pill">iFlow Engineering <span>Process palettes & mapping rules</span></div>
-                        <div class="tech-pill">TPM Framework <span>Trading Partner Management control</span></div>
-                        <div class="tech-pill">API Management <span>Policy templates & proxy governance</span></div>
-                        <div class="tech-pill">Groovy Scripting <span>Dynamic runtime pipeline extensions</span></div>
-                    </div>
-
-                    <div id="onprem" class="tab-panel">
-                        <div class="tech-pill">ESR & ID configurations <span>Enterprise Repository architecture</span></div>
-                        <div class="tech-pill">Runtime Monitoring <span>SPROXY & SXMB_MONI diagnostics</span></div>
-                        <div class="tech-pill">ALM Tracking <span>WE02, WE19, & WE20 IDoc controls</span></div>
-                        <div class="tech-pill">Dual Stack Support <span>ABAP/Java message routing engine</span></div>
-                    </div>
-
-                    <div id="security" class="tab-panel">
-                        <div class="tech-pill">SSH Keystore Ops <span>Public key handshake bindings</span></div>
-                        <div class="tech-pill">Payload Protection <span>PGP cryptographic encryption loops</span></div>
-                        <div class="tech-pill">Access Governance <span>OAuth 2.0, X.509, & AS2 handshakes</span></div>
-                        <div class="tech-pill">Network Diagnostics <span>Resolving edge routing & 403 barriers</span></div>
-                    </div>
-
-                    <div id="protocols" class="tab-panel">
-                        <div class="tech-pill">EDI Standards <span>ANSI X12 & EDIFACT parsing</span></div>
-                        <div class="tech-pill">REST / SOAP Proxies <span>WSDL schemas & JSON processing</span></div>
-                        <div class="tech-pill">Application Proxies <span>RFC, IDoc, & SFTP transport pipelines</span></div>
-                        <div class="tech-pill">Transformation Rules <span>XSLT layouts & XPath conditions</span></div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- FILTERABLE CASE STUDIES SECTION -->
-            <section id="projects">
-                <h2>Architectural Case Studies</h2>
-                <div class="filter-menu">
-                    <button class="filter-btn active" onclick="filterProjects(event, 'all')">All Architectures</button>
-                    <button class="filter-btn" onclick="filterProjects(event, 'b2b')">B2B Automation</button>
-                    <button class="filter-btn" onclick="filterProjects(event, 'cloud-mig')">Cloud Migration</button>
-                </div>
-
-                <div class="projects-grid">
-                    <div class="project-card" data-category="b2b">
-                        <div class="project-tag">B2B Integration Architecture</div>
-                        <h3>Global Supply Chain Automation Framework</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">
-                            Orchestrated high-volume structured document loops bypassing manual onboarding bottlenecks for tier-1 supply hubs including Walmart, Amazon, Costco, and Kraft Heinz.
-                        </p>
-                        <div class="project-metrics">
-                            <div class="metric">Engine <strong>SAP TPM / AS2</strong></div>
-                            <div class="metric">Topology <strong>Hub-and-Spoke</strong></div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="cloud-mig">
-                        <div class="project-tag">Cloud Infrastructure Shift</div>
-                        <h3>Enterprise PI-to-CPI Migration System</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">
-                            Deconstructed legacy configuration silos to transform over 70 complex interfaces into decoupled, cloud-native AWS deployments running under the RISE initiative framework.
-                        </p>
-                        <div class="project-metrics">
-                            <div class="metric">Scope <strong>70+ Pipelines</strong></div>
-                            <div class="metric">Platform <strong>BTP Cloud Integration</strong></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
+    <div class="sap-shellbar">
+        <div class="sap-shellbar-brand">
+            <span class="sap-logo">SAP</span>
+            <span>Fiori Launchpad — Integration Workspace</span>
+        </div>
+        <div class="sap-shellbar-badge">Tenant: Cloud Production Runtimes</div>
     </div>
 
-    <footer>
-        <p>SAP Certification (Active through May 2027) &bull; Pranav Yadav</p>
-        <div class="footer-links">
-            <a href="mailto:pranavyadav.official@gmail.com">Email Profile</a>
-            <a href="#">LinkedIn Gateway</a>
-            <a href="#">GitHub Repository</a>
+    <div class="sap-object-page">
+        <div class="sap-object-header">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px;">
+                <div>
+                    <h1 class="sap-object-header-title">Pranav Yadav</h1>
+                    <div class="sap-object-header-subtitle">Senior SAP Integration Consultant & Middleware Engineer</div>
+                    <p style="color: var(--sap-text-muted); max-width: 750px; font-size: 0.95rem;">
+                        Certified middleware engineer executing architectural designs, technical parameter mapping rules, and robust endpoint connection controls within core SAP landscapes. Specializing in secure B2B connectivity frameworks.
+                    </p>
+                </div>
+                <div>
+                    <a href="mailto:pranavyadav.official@gmail.com" class="sap-btn-primary">Execute Communication Handshake</a>
+                </div>
+            </div>
         </div>
-    </footer>
+
+        <div class="sap-grid-row">
+            <div class="sap-kpi-tile">
+                <div class="sap-kpi-label">Global Runtime Verification</div>
+                <div class="sap-kpi-value">SAP BTP Cloud</div>
+                <div class="sap-kpi-status">● Core Status Active</div>
+            </div>
+            <div class="sap-kpi-tile">
+                <div class="sap-kpi-label">Professional Certification</div>
+                <div class="sap-kpi-value">C_CPI_15</div>
+                <div class="sap-kpi-status" style="color:var(--sap-brand-color)">● Verified Badge Owner</div>
+            </div>
+            <div class="sap-kpi-tile">
+                <div class="sap-kpi-label">Infrastructure Migration</div>
+                <div class="sap-kpi-value">70+ Interfaces</div>
+                <div class="sap-kpi-status">● Completed (AWS Environment)</div>
+            </div>
+        </div>
+
+        <div class="sap-icontabbar">
+            <div class="sap-tab-header">
+                <button class="sap-tab-item sap-selected" onclick="toggleFioriTab(event, 'sap-cpi')">Cloud Platform (CPI/BTP)</button>
+                <button class="sap-tab-item" onclick="toggleFioriTab(event, 'sap-pi')">On-Premise Suite (PI/PO)</button>
+                <button class="sap-tab-item" onclick="toggleFioriTab(event, 'sap-sec')">Security Matrix</button>
+            </div>
+
+            <div class="sap-tab-content">
+                <div id="sap-cpi" class="sap-pane sap-active">
+                    <table class="sap-ui-table">
+                        <thead>
+                            <tr><th style="width: 30%;">Component Block</th><th>Configured Tooling & Technical Parameters</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Trading Partner Management</strong></td><td>Framework configuration, B2B profile builds, agreement models</td></tr>
+                            <tr><td><strong>API Management</strong></td><td>Governance policy structures, custom API proxy builds, traffic management</td></tr>
+                            <tr><td><strong>Process Palettes</strong></td><td>Message Mapping, Flow Steps, Conversions, Content Modifiers</td></tr>
+                            <tr><td><strong>Automation Extensions</strong></td><td>Dynamic logic loops utilizing native Groovy Script pipelines, XSLT, and XPath filters</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="sap-pi" class="sap-pane">
+                    <table class="sap-ui-table">
+                        <thead>
+                            <tr><th style="width: 30%;">Component Block</th><th>Configured Tooling & Technical Parameters</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Enterprise Services Repository</strong></td><td>Data Types, Message Types, custom Message Mapping structures, Operation Types</td></tr>
+                            <tr><td><strong>System Landscape Directory</strong></td><td>Technical System parameters, Business Component profiles</td></tr>
+                            <tr><td><strong>Integration Directory</strong></td><td>Receiver Determinations, Interface Determinations, Sender/Receiver Agreements</td></tr>
+                            <tr><td><strong>Connectivity Blocks</strong></td><td>Native Transport Adapters (SFTP, Mail, JDBC, IDoc, SOAP, REST, XI, RFC)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="sap-sec" class="sap-pane">
+                    <table class="sap-ui-table">
+                        <thead>
+                            <tr><th style="width: 30%;">Component Block</th><th>Configured Tooling & Technical Parameters</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Cryptographic Handshakes</strong></td><td>AS2 transport frameworks, secure X.509 signing certificates, public/private key control</td></tr>
+                            <tr><td><strong>Data Layer Security</strong></td><td>PGP explicit message encryption blocks, OAuth 2.0 authorization tokens</td></tr>
+                            <tr><td><strong>Network Boundaries</strong></td><td>SSH Keystore configuration rules, host verification procedures, resolving 403 HTTP walls</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="sap-panel">
+            <div class="sap-panel-title">Architectural Execution & Framework Control Logs</div>
+            <table class="sap-ui-table">
+                <thead>
+                    <tr><th style="width: 25%;">Project Scope Label</th><th style="width: 45%;">Functional Architectural Matrix</th><th>Target Connection Gateways</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>B2B Logistics Framework</strong></td>
+                        <td>Streamlined enterprise Trading Partner Management profile templates. Automated secure document exchange flows via AS2 and SFTP transport protocols.</td>
+                        <td><span class="sap-token">Walmart</span><span class="sap-token">Amazon</span><span class="sap-token">Costco</span><span class="sap-token">Kraft Heinz</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Infrastructure Cloud Shift</strong></td>
+                        <td>Deconstructed, rebuilt, and systematically transitioned over 70 legacy on-premise PI architectures over to cloud-native, secure cloud configurations running on AWS.</td>
+                        <td><span class="sap-token">SAP BTP Cloud Integration</span><span class="sap-token">OFI RISE Platform</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="sap-footer">
+        <p>Active Certifications through May 2027 &bull; Pranav Yadav</p>
+        <div style="margin-top: 12px;">
+            <a href="mailto:pranavyadav.official@gmail.com">SMTP Email</a>
+            <a href="#">LinkedIn Node</a>
+            <a href="#">GitHub Core</a>
+        </div>
+    </div>
 
     <script>
-        // Interactive Skill Tab Switcher
-        function switchTab(event, tabId) {
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
-            
-            event.currentTarget.classList.add('active');
-            document.getElementById(tabId).classList.add('active');
-        }
-
-        // Functional Project Filter Logic
-        function filterProjects(event, category) {
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            event.currentTarget.classList.add('active');
-
-            document.querySelectorAll('.project-card').forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // Copy Metadata Interaction
-        function copyContact() {
-            const contactString = "Pranav Yadav | pranavyadav.official@gmail.com | SAP Integration Specialist";
-            navigator.clipboard.writeText(contactString).then(() => {
-                const btn = document.querySelector('.copy-trigger');
-                btn.innerText = "Metadata Copied!";
-                setTimeout(() => { btn.innerText = "Copy Contact Metadata"; }, 2000);
-            });
+        function toggleFioriTab(event, paneId) {
+            document.querySelectorAll('.sap-tab-item').forEach(btn => btn.classList.remove('sap-selected'));
+            document.querySelectorAll('.sap-pane').forEach(pane => pane.classList.remove('sap-active'));
+            event.currentTarget.classList.add('sap-selected');
+            document.getElementById(paneId).classList.add('sap-active');
         }
     </script>
 </body>
